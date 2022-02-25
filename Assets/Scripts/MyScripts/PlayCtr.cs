@@ -54,7 +54,7 @@ public class PlayCtr : NetworkBehaviour
             moveMode(input_DL, mouseMoves_DS, Input.GetButton("Jump"));
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Summon();
+                CmdSummon();
                
                 
             }
@@ -63,7 +63,7 @@ public class PlayCtr : NetworkBehaviour
     }
 
     [Command]
-    void Summon()
+    void CmdSummon()
     {
         GameObject newSummon = Instantiate(summon);
         newSummon.transform.position = transform.position + transform.forward;
