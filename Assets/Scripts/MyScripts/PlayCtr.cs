@@ -21,9 +21,10 @@ public class PlayCtr : NetworkBehaviour
 
     public MeshRenderer m_MeshRenderer;
     [SyncVar]
+    public Color m_ColorSV;
     public Color m_Color;
     [SyncVar]
-    public float hp;
+    public float hpSV;
 
     public GameObject summon;
     // Start is called before the first frame update
@@ -59,7 +60,7 @@ public class PlayCtr : NetworkBehaviour
                 
             }
         }
-        //m_MeshRenderer.material.SetColor("_Color", m_Color) ;
+        m_MeshRenderer.material.SetColor("_Color", m_ColorSV) ;
     }
 
     [Command]
@@ -68,9 +69,13 @@ public class PlayCtr : NetworkBehaviour
         GameObject newSummon = Instantiate(summon);
         newSummon.transform.position = transform.position + transform.forward;
         NetworkServer.Spawn(newSummon);
-        hp += 10f;
+        hpSV += 10f;
     }
-
+    [Command]
+    void CmdColor()
+    {
+        m_ColorSV = m_Color;
+    }
     void MouseMovementComputing()
     {
         mouseMoves_DS = Input.mousePosition - mouseMovesLast_DS;
