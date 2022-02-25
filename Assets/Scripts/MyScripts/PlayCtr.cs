@@ -22,6 +22,8 @@ public class PlayCtr : NetworkBehaviour
     public MeshRenderer m_MeshRenderer;
     [SyncVar]
     public Color m_Color;
+    [SyncVar]
+    public float hp;
 
     public GameObject summon;
     // Start is called before the first frame update
