@@ -22,6 +22,8 @@ public class PlayCtr : NetworkBehaviour
     public MeshRenderer m_MeshRenderer;
     [SyncVar]
     public Color m_Color;
+
+    public GameObject summon;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +50,11 @@ public class PlayCtr : NetworkBehaviour
             MouseMovementComputing();
             Vector3 input_DL = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
             moveMode(input_DL, mouseMoves_DS, Input.GetButton("Jump"));
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                GameObject newSummon = Instantiate(summon);
+                newSummon.transform.position = transform.position + transform.forward;
+            }
         }
         m_MeshRenderer.material.SetColor("_Color", m_Color) ;
     }
