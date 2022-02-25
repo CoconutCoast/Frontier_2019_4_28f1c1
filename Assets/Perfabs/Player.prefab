@@ -183,6 +183,7 @@ MonoBehaviour:
   mc_camera: {fileID: 4945513311685874190}
   m_MeshRenderer: {fileID: 2635740702348313648}
   m_Color: {r: 1, g: 0.7413453, b: 0, a: 0}
+  hp: 0
   summon: {fileID: 5186070952530272236, guid: 57df78044fd925f4da73be0b88ec6ca6, type: 3}
 --- !u!1 &2604743204852602672
 GameObject:

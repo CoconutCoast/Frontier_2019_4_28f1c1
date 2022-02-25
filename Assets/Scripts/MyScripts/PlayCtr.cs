@@ -68,6 +68,7 @@ public class PlayCtr : NetworkBehaviour
         GameObject newSummon = Instantiate(summon);
         newSummon.transform.position = transform.position + transform.forward;
         NetworkServer.Spawn(newSummon);
+        hp += 10f;
     }
 
     void MouseMovementComputing()
