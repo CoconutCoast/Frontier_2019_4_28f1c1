@@ -181,6 +181,8 @@ MonoBehaviour:
   gravityValue: 9.81
   jumpPow: 1
   mc_camera: {fileID: 4945513311685874190}
+  m_MeshRenderer: {fileID: 2635740702348313648}
+  m_Color: {r: 1, g: 0.7413453, b: 0, a: 0}
 --- !u!1 &2604743204852602672
 GameObject:
   m_ObjectHideFlags: 0
