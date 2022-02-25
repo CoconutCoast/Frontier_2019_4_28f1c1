@@ -60,7 +60,6 @@ public class PlayCtr : NetworkBehaviour
                 
             }
         }
-        CmdColor(m_Color);
         m_MeshRenderer.material.SetColor("_Color", m_ColorSV) ;
     }
 
@@ -72,10 +71,10 @@ public class PlayCtr : NetworkBehaviour
         NetworkServer.Spawn(newSummon);
         hpSV += 10f;
     }
-    [Command]
-    void CmdColor(Color color)
+    
+    void CmdColor()
     {
-        m_ColorSV = color;
+        m_ColorSV = m_Color;
     }
     void MouseMovementComputing()
     {
