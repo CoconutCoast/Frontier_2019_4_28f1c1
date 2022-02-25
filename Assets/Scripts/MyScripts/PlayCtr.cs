@@ -78,13 +78,11 @@ public class PlayCtr : NetworkBehaviour
         newSummon.transform.position = transform.position + transform.forward;
         NetworkServer.Spawn(newSummon);
         hpSV += 10f;
-        Debug.Log(hpSV);
     }
 
     [Command]
     void CmdColor(Color color)
     {
-        Debug.Log(color);
         m_Color = color;
         m_ColorSV = color;
     }
