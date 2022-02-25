@@ -60,6 +60,7 @@ public class PlayCtr : NetworkBehaviour
                 
             }
         }
+        CmdColor();
         m_MeshRenderer.material.SetColor("_Color", m_ColorSV) ;
     }
 
