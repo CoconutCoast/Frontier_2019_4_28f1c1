@@ -71,12 +71,15 @@ public class PlayCtr : NetworkBehaviour
         newSummon.transform.position = transform.position + transform.forward;
         NetworkServer.Spawn(newSummon);
         hpSV += 10f;
+        Debug.Log(hpSV);
     }
-    
+
+    [Command]
     void CmdColor()
     {
         m_ColorSV = m_Color;
     }
+
     void MouseMovementComputing()
     {
         mouseMoves_DS = Input.mousePosition - mouseMovesLast_DS;
