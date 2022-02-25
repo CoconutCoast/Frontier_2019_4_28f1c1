@@ -18,6 +18,10 @@ public class PlayCtr : NetworkBehaviour
     public float jumpPow = 1.0f;
 
     public GameObject mc_camera;
+
+    public MeshRenderer m_MeshRenderer;
+    [SyncVar]
+    public Color m_Color;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +49,7 @@ public class PlayCtr : NetworkBehaviour
             Vector3 input_DL = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
             moveMode(input_DL, mouseMoves_DS, Input.GetButton("Jump"));
         }
+        m_MeshRenderer.material.SetColor("_Color", m_Color) ;
     }
 
     void MouseMovementComputing()
