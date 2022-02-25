@@ -25,8 +25,12 @@ public class PlayCtr : NetworkBehaviour
     public Color m_Color;
     [SyncVar]
     public float hpSV;
+    public string tell;
+
 
     public GameObject summon;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,9 +59,12 @@ public class PlayCtr : NetworkBehaviour
             moveMode(input_DL, mouseMoves_DS, Input.GetButton("Jump"));
             if (Input.GetKeyDown(KeyCode.E))
             {
-                CmdSummon();
-               
-                
+                CmdSummon(); 
+            }
+            if (Input.GetKeyDown(KeyCode.T))
+            {
+                CmdTell(tell);
+                tell = "";
             }
         }
         CmdColor();
@@ -78,6 +85,12 @@ public class PlayCtr : NetworkBehaviour
     void CmdColor()
     {
         m_ColorSV = m_Color;
+    }
+
+    [Command]
+    void CmdTell(string tell)
+    {
+        Debug.Log(tell);
     }
 
     void MouseMovementComputing()
