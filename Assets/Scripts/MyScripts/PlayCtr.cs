@@ -85,6 +85,7 @@ public class PlayCtr : NetworkBehaviour
     void CmdColor(Color color)
     {
         Debug.Log(color);
+        m_Color = color;
         m_ColorSV = color;
     }
 
